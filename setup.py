@@ -31,13 +31,13 @@ class Tox(TestCommand):
 
 setup(
     name='cordwainer',
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(),
     url='https://github.com/caktus/cordwainer',
     license='APL2',
     author='Dan Poirier',
     author_email='dpoirier@caktusgroup.com',
-    description='Django package to help import data from CSV files',
+    description='A better CSV module',
     install_requires=[
         'six>=1.7',
     ],
