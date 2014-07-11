@@ -43,6 +43,25 @@ If ``encoding`` is omitted or ``None``, Cordwainer assumes the
 provided stream will provide or expect un-encoded text data, just
 like Python 3's csv module.
 
+Suppose you need to read a .CSV file that was written using `cp720`
+encoding.  In Python 2, you would have to arrange to read it in,
+decode the data to characters, then encode it again to `utf-8` before
+you could pass it to the csv module.  To write out an updated file,
+you have to do all that in reverse.
+
+In Python 3, you still have to arrange to read it in and decode it
+before passing to csv, and encode the output.
+
+With Cordwainer, just pass in the encoding::
+
+    import cordwainer.csv as csv
+
+    f = open("cp720file.csv", "rb")
+    reader = csv.reader(f, encoding="cp720")
+
+    f = open("newcp270file.csv", "wb")
+    writer = csv.writer(f, encoding="cp720")
+
 Misc. Usage Notes
 -----------------
 
